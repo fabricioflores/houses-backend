@@ -49,4 +49,4 @@ group :development do
 end
 
 gem 'activerecord-postgis-adapter'
-
+gem 'sluggi'

@@ -165,6 +165,9 @@ GEM
     rgeo-activerecord (7.0.1)
       activerecord (>= 5.0)
       rgeo (>= 1.0.0)
+    sluggi (0.5.0)
+      activerecord (>= 4.0)
+      railties (>= 4.0)
     stringio (3.0.8)
     thor (1.2.2)
     timeout (0.4.0)
@@ -187,6 +190,7 @@ DEPENDENCIES
   pry (~> 0.14.2)
   puma (~> 5.0)
   rails (~> 7.0.7)
+  sluggi
   tzinfo-data
 
 RUBY VERSION

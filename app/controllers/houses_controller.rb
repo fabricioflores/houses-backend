@@ -9,6 +9,11 @@ class HousesController < ApplicationController
     render json: @houses
   end
 
+  def show
+    @house = House.find_by_slug(params[:id])
+    render json: @house
+  end
+
   private
 
   def missing_search_params
