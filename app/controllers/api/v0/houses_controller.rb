@@ -1,6 +1,12 @@
 module Api
   module V0
     class HousesController < ApplicationController
+
+      def index
+        @houses = House.all
+        render json: @houses
+      end
+
       def search
         if missing_search_params
           render json: { error: "Missing lat/lng/distance parameters" }, status: 400

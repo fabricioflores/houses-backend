@@ -50,3 +50,4 @@ end
 
 gem 'activerecord-postgis-adapter'
 gem 'sluggi'
+gem 'rack-cors'
