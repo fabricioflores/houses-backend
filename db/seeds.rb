@@ -8,12 +8,13 @@
 House.create(
     name: "Casa 4 habitaciones en el norte de Loja",
     address: "Av. Orillas del Zamora",
-    address_lonlat: "POINT(-3.986897 -79.202478)",
+    # order is lng lat
+    address_lonlat: "POINT(-79.202478 -3.986897)",
     bathrooms: 3,
     bedrooms: 4,
     description: "loremp ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
     features: ["garage", "patio", "jardin"],
     floorspace: 200,
     price: 200000,
-    property_type: "casa"
+    property_type: "casa",
 )
