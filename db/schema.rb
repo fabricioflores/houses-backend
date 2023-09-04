@@ -10,10 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_184713) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_04_190219) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  # Custom types defined in this database.
+  # Note that some types may not work with other database engines. Be careful if changing database.
+  create_enum "type", ["casa", "departamento", "oficina", "local", "lote", "bodega", "finca", "otro"]
 
   create_table "houses", force: :cascade do |t|
     t.string "name"
@@ -22,6 +26,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_184713) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.string "description"
+    t.integer "price"
+    t.integer "bedrooms"
+    t.integer "bathrooms"
+    t.integer "floorspace"
+    t.enum "property_type", enum_type: "type"
+    t.string "features", default: [], array: true
     t.index ["slug"], name: "index_houses_on_slug", unique: true
   end
 
