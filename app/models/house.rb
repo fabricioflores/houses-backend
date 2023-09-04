@@ -1,7 +1,7 @@
 class House < ApplicationRecord
-    scope :within, -> (latitude, longitude, distance) {
+    scope :within, -> (params) {
         where(%{
          ST_Distance(address_lonlat, 'POINT(%f %f)') < %d
-        } % [longitude, latitude, distance]) # approx
+        } % [params[:lng], params[:lat], params[:distance]]) # approx
       }
 end
